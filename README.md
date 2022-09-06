@@ -233,14 +233,14 @@ services:
 
 위 내용을 복사하여 붙여넣기합니다. 각 단어에 대한 설명은 간단하게만 하겠습니다.
 
-services : 컨테이너 서비스
-jenkins : 서비스 이름
-image : 컨테이너 생성시 사용할 image, 여기서는 jenkins/jenkins:lts 이미지를 사용(jenkins의 lts버전을 가져온다는 뜻)
-container_name : 컨테이너 이름
-volumes : 공유 폴더 느낌, aws의 /var/run/docker.sock와 컨테이너 내부의 /var/run/docker.sock를 연결, /jenkins 폴더와 /var/jenkins_home 폴더를 연결.
-ports : 포트 매핑, aws의 9090 포트와 컨테이너의 8080 포트를 연결한다.
-privileged : 컨테이너 시스템의 주요 자원에 연결할 수 있게 하는 것 기본적으로 False로 한다고 한다.
-user : 젠킨스에 접속할 유저 계정 (root로 할 경우 관리자)
+- services : 컨테이너 서비스
+- jenkins : 서비스 이름
+- image : 컨테이너 생성시 사용할 image, 여기서는 jenkins/jenkins:lts 이미지를 사용(jenkins의 lts버전을 가져온다는 뜻)
+- container_name : 컨테이너 이름
+- volumes : 공유 폴더 느낌, aws의 /var/run/docker.sock와 컨테이너 내부의 /var/run/docker.sock를 연결, /jenkins 폴더와 /var/jenkins_home 폴더를 연결.
+- ports : 포트 매핑, aws의 9090 포트와 컨테이너의 8080 포트를 연결한다.
+- privileged : 컨테이너 시스템의 주요 자원에 연결할 수 있게 하는 것 기본적으로 False로 한다고 한다.
+- user : 젠킨스에 접속할 유저 계정 (root로 할 경우 관리자)
 
 ![image](./images/27.jpg)
 
