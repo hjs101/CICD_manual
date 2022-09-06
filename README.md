@@ -211,7 +211,6 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-compose
 ## 젠킨스 설치(도커 컨테이너) 및 계정 생성
 
 참고사항
-- 계절학기 docker-jenkins CICD 명세서
 - [참고 링크](dongyeon1201.kr/9026133b-31be-4b58-bcc7-49abbe893044)
 
 #### :point_right: docker-compose 이용 젠킨스 컨테이너 생성
