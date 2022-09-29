@@ -699,7 +699,7 @@ SSH 연결이 완료되었습니다. 저장 버튼을 눌러 저장해주겠습�
 sudo docker load < /jenkins/images_tar/react.tar
 sudo docker load < /jenkins/images_tar/django.tar
 
-if (sudo docker ps | grep "react then sudo docker stop react; fi
+if (sudo docker ps | grep "react"); then sudo docker stop react; fi
 if (sudo docker ps | grep "django"); then sudo docker stop django; fi
 
 sudo docker run -it -d --rm -p 80:80 -p 443:443 --name react react
