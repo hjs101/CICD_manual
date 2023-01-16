@@ -4,7 +4,7 @@
 # 배포 매뉴얼
 
 
-본 글은 Django, React, Nginx를 이용하여 CICD 무중단 배포를 구축하는 방법에 대해 경험을 기반으로 작성한 글입니다.
+본 글은 Django, React, Nginx를 이용하여 CICD 배포를 구축하는 방법에 대해 경험을 기반으로 작성한 글입니다.
 
 ![image](./images/1.jpg)
 
