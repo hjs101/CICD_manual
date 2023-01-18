@@ -66,6 +66,8 @@ aws 로그인 화면입니다. 계정이 없다면 만들어줍시다.
 
 하지만 무료버전에서는 배포 도중 자원 부족으로 서버 다운 등의 문제가 발생할 수 있습니다. 여기서는 잠깐 띄우고 삭제할 예정이므로 t3.medium 유형을 선택해주겠습니다.(시간당 71원 : 24시간 서비스 할 경우 한 달에 약 50000원 :open_mouth:)
 
+[프리티어 메모리 스왑](https://www.google.com/search?q=%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4+%EB%A9%94%EB%AA%A8%EB%A6%AC+%EC%8A%A4%EC%99%91&oq=%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4+%EB%A9%94%EB%AA%A8%EB%A6%AC+%EC%8A%A4%EC%99%91&aqs=chrome..69i57j0i5i30i625.3482j0j4&sourceid=chrome&ie=UTF-8)
+
 #### :point_right: 키 페어 생성
 
 ![image](./images/8.jpg)
