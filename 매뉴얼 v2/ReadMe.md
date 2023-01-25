@@ -235,7 +235,7 @@ services:
         ports:
             - "9090:8080"
         privileged: true
-        user: jenkins
+        user: root
 ```
 
 위 내용을 복사하여 붙여넣기합니다. 각 단어에 대한 설명은 간단하게만 하겠습니다.
