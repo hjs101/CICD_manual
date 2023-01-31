@@ -554,7 +554,7 @@ React 도커파일에서 #으로 주석처리한 부분은 nginx 설정에 사�
 ```
 docker build -t backimg ./crudtest-1
 if (docker ps | grep "backimg"); then docker stop backimg; fi
-docker run -it -d --rm -p 10080:10080 --name backimg backimg
+docker run -it -d --rm -p 8080:8080 --name backimg backimg
 echo "Run testproject"
 
 docker build -t frontimg ./testproject_react
@@ -567,7 +567,7 @@ echo "Run testproject_react"
 
 docker build -t backimg ./crudtest-1 : 도커 이미지 빌드(Spring 프로젝트)
 - if (docker ps | grep "backimg"); then docker stop backimg; fi : 만약 'backimg' 컨테이너가 이미 있다면 stop시키기
-- docker run -it -d --rm -p 10080:10080 --name backimg backimg : 10080포트로 도커 컨테이너 run
+- docker run -it -d --rm -p 8080:8080 --name backimg backimg : 8080포트로 도커 컨테이너 run
 - docker build -t frontimg ./testproject_react : 도커 이미지 빌드(React 프로젝트)
 - if (docker ps | grep "frontimg"); then docker stop frontimg; fi : 만약 'frontimg' 컨테이너가 이미 있다면 stop시키기
 - docker run -it -d --rm -p 80:80 --name frontimg frontimg : 80포트로 도커 컨테이너 run
@@ -586,7 +586,7 @@ docker build -t backimg ./crudtest-1 : 도커 이미지 빌드(Spring 프로젝�
 
 서버의 80포트(HTTP)에는 React를 확인할 수 있습니다.
 
-개인 서버에서 10080 포트를 열어두셨다면, spring boot 서버도 확인이 가능합니다. 하지만, SSAFY에서 제공되는 EC2는 10080 포트가 열려있지 않기 때문에 spring boot 프로젝트의 배포 상황은 nginx의 reverse proxy 기능을 통해 80 port로 접근할 수 있도록 해주어야 합니다.
+개인 서버에서 8080 포트를 열어두셨다면, spring boot 서버도 확인이 가능합니다.
 
 1. Gitlab Push Event가 일어나면
 2. Jenkins에서 WebHook을 통해 자동으로 빌드를 실행
@@ -600,7 +600,7 @@ docker build -t backimg ./crudtest-1 : 도커 이미지 빌드(Spring 프로젝�
 SSAFY의 EC2는 허용하는 포트에 제한이 걸리기 떄문에, Reverse Proxy 작업을 하지 않으면 서버에 접근이 불가능한 경우가 생길 수 있습니다.
 따라서 80 Port에서 백과 프론트, 두 서비스를 구분 짓는 부분이 필요합니다.
 
-마지막 Nginx 설정 부분입니다. 이 과정은, 기존 리액트와 포트가 분리되어 10080 포트를 이용해야 접속 가능한 백엔드 서비스를 80 포트를 통해 접속할 수 있도록 변경시켜주는 작업입니다.
+마지막 Nginx 설정 부분입니다. 이 과정은, 기존 리액트와 포트가 분리되어 8080 포트를 이용해야 접속 가능한 백엔드 서비스를 80 포트를 통해 접속할 수 있도록 변경시켜주는 작업입니다.
 
 
 #### :point_right: nginx.conf 파일 생성
@@ -613,7 +613,7 @@ nginx.conf 파일
 ```
 upstream backend{
 	ip_hash;
-	server 172.26.8.156:10080;
+	server 172.26.8.156:8080;
 }
 
 server {
@@ -676,7 +676,7 @@ server {
 
 nginx 설정 파일에 대해 간략하게 설명하면,
 
-upstream 을 통해서 backend를 로컬 ip:10080 주소와 연결시키고,
+upstream 을 통해서 backend를 로컬 ip:8080 주소와 연결시키고,
 
 해당 주소를 location /api 에 연결시켰습니다.
 
