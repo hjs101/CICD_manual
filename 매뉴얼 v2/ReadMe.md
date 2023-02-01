@@ -427,8 +427,20 @@ WebHook을 생성하고 나면 빌드 테스트를 위해 생성된 WebHook에�
 
 ## 젠킨스와 연결된 gitlab 프로젝트로 도커 이미지 빌드하기
 
+(02.01 추가)
+지금까지 방법에서는 Jenkins 내부에 Docker를 따로 설치하여, docker 명령어를 사용할 수 있도록 했습니다.
+추가적으로 학습하며 알아낸 사항으로, Jenkins 컨테이너를 생성할 때 볼륨을 다음과 같이 설정하면 젠킨스 컨테이너 내부에 별도로 도커를 설치하지 않아도 됩니다.
+
+```
+- /usr/bin/docker:/usr/bin/docker
+- /var/run/docker.sock:/var/run/docker.sock
+```
+
+위와 같이 docker.sock 파일 뿐만 아니라, docker 폴더까지 볼륨으로 연결을 시켜줌으로써 내부에 도커 설치 없이 작동하는 것을 확인했습니다.
+
+기존의 방식은 아래 내용을 숨겨두겠습니다.
 <details>
-<summary>접기/펼치기 버튼</summary>
+<summary>접기/펼치기</summary>
 <div markdown="1">
 참고사항
 - [참고 링크](https://sinawi.tistory.com/371)
