@@ -230,6 +230,7 @@ services:
         image: jenkins/jenkins:lts
         container_name: jenkins
         volumes:
+	    - /usr/bin/docker:/usr/bin/docker
             - /var/run/docker.sock:/var/run/docker.sock
             - /jenkins:/var/jenkins_home
         ports:
