@@ -427,6 +427,9 @@ WebHook을 생성하고 나면 빌드 테스트를 위해 생성된 WebHook에�
 
 ## 젠킨스와 연결된 gitlab 프로젝트로 도커 이미지 빌드하기
 
+<details>
+<summary>접기/펼치기 버튼</summary>
+<div markdown="1">
 참고사항
 - [참고 링크](https://sinawi.tistory.com/371)
 
@@ -483,6 +486,9 @@ apt install docker-ce docker-ce-cli containerd.io docker-compose
 ```
 
 여기까지 진행하면 `Jenkins Container`에도 `Docker`가 설치 완료되었습니다.
+</div>
+</details>
+
 
 #### :point_right: 프로젝트에 DockerFile 작성
 
