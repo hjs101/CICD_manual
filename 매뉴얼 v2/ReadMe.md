@@ -5,7 +5,7 @@
 
 본 글은 Spring Boot, React, Nginx를 이용하여 CICD 배포를 구축하는 방법에 대해 경험을 기반으로 작성한 글입니다.
 
-![image](./images2/1.jpg) (수정 필요)
+![image](./images2/1.jpg)
 
 위 사진이 구축하고자 하는 그림입니다. 작동 방식은 다음과 같습니다.
 
